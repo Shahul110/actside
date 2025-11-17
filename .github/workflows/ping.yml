@@ -1,28 +1,26 @@
-name: Ping Website Every 15 Minutes
+name: Ping Website Every Minute (Test)
 
+# Trigger workflow every 1 minute for testing
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/1 * * * *"  # runs every 1 minute
+  workflow_dispatch:       # allows manual run
 
 jobs:
   ping:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.x"
 
-      - name: Install dependencies
-        run: |
-          cd ping-job
-          pip install -r requirements.txt
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
 
-      - name: Run ping script
-        run: |
-          cd ping-job
-          python ping.py
+      - name: Run Ping Script
+        run: python ping.py
