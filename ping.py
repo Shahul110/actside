@@ -1,9 +1,7 @@
 import requests
 
-url = "https://kollywoodclash.in"
-
 try:
-    r = requests.get(url, timeout=10)
-    print("Status Code:", r.status_code)
+    r = requests.get("https://kollywoodclash.in", timeout=10)
+    print("Ping success:", r.status_code)
 except Exception as e:
-    print("Error:", e)
+    print("Ping failed:", e)
