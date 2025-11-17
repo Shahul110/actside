@@ -2,7 +2,7 @@ name: Ping Website Every 15 Minutes
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # runs every 15 minutes
+    - cron: "*/1 * * * *"   # runs every 15 minutes
   workflow_dispatch:         # allows manual run
 
 jobs:
