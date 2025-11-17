@@ -2,7 +2,7 @@ name: Ping Website Every 15 Minutes
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/1 * * * *"
 
 jobs:
   ping:
